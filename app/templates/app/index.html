@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block title %}FeedFuse{% endblock %} {%
+block content %}
+
+<div class="index">
+    {% for key, value in result.items() %}
+    <section class="main-container">
+        <h1>{{key}}</h1>
+        <div class="container">
+            {% for r in value %}
+            <a href="{{r.url}}" title="{{r.title}}">
+                <p>{{r.title}}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+</div>
+
+{% endblock %}

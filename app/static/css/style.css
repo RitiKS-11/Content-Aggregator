@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+}
+
+navbar{
+    margin: 1em 2em;
+    height: 6rem;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    margin: 0 5rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+
+}
+
+.logo {
+    color: #000;
+    font-size: 195%;
+}
+
+.nav_list{
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+    gap: 2.5em;    
+}
+
+.nav_list li a{
+    font-size: 1rem;
+    color: #000;
+}
+
+.nav_list li a:hover{
+    color: #000;
+}
+
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.index {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    /* border-bottom: 2px solid #000; */
+    width: fit-content;
+}
+
+.main-container {
+    width: 22rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
+
+.container a p{
+    color: #000; 
+    border-bottom: 2px solid rgba(0, 0, 0, 0.07);
+    width: inherit;
+    padding-bottom: .5rem;
+    margin: .1rem 0 .2rem;
+    
+}
+
+.container a p{
+    font-size: .85rem;
+    width: 15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+footer{
+    border-top: 2px solid rgba(0, 0, 0, 0.7);
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding: .3rem 0;
+}
+
+footer p{
+    text-align: center;
+    font-size: .8rem;
+}
