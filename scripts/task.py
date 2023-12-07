@@ -1,7 +1,7 @@
 from app import celery
-from .scraper import run
+# from .scraper import run_scripts
 
 @celery.task
 def background_task():
-    run()
+    run_scripts()
 

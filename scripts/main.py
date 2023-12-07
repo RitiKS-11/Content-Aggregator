@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from sqlalchemy import exc
 
 from app import app
 from app.database import db
@@ -24,5 +25,28 @@ def insert_in_database(source=None, title=None, url=None, img=None):
             db.session.add(content)
             db.session.commit()
     
-    except Exception as e:
-        raise e
+    except exc.IntegrityError:
+        pass
+    
+def process_content(soup, element, class_name, base_url, source, limit=4):
+
+    use_aria_label = ['reddit news', 'reddit spacex', 'verge']
+    needs_base_url = ['bbc', 'reddit news', 'reddit spacex', 'verge', 'game informer']
+
+    contents = soup.find_all(element, class_=class_name)
+
+    for index, content in enumerate(contents):
+        if element != 'a':
+            content = content.find("a")
+
+        title = content['aira-label'] if source in use_aria_label else content.text.strip().replace("\n","")
+        url = base_url + content["href"] if source in needs_base_url else content["href"]
+
+        # insert_in_database(title=title, url=url, source=source)
+        print(title, source, url)
+        print('\n')
+
+        if limit == index:
+            break
+        
+    
