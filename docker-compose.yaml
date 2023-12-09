@@ -1,0 +1,33 @@
+version: "3"
+services:
+  web:
+    build: ./
+    container_name: web
+    ports:
+      - '5000:5000'
+    links:
+      - redis
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./:/app 
+    depends_on:
+      - worker
+  
+  redis:
+    container_name: redis
+    image: redis
+    hostname: redis
+
+  worker:
+    build:
+      context: ./
+    hostname: worker
+    entrypoint: celery
+    command: -A app.celery worker --loglevel=info && -A app.celery beat --loglevel=info
+    volumes:
+      - ./:/app
+    links:
+      - redis
+    depends_on:
+      - redis

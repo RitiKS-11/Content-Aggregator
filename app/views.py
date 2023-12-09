@@ -2,17 +2,21 @@ from flask import jsonify, render_template
 
 from app import app
 from app.models import ContentModel, ContentModelSchema
-from app.utils import main
-
+from app.util.main import get_source
 
 @app.route("/")
 def index():
     result = {
-        "Bbc": main.get_source('bbc'),
-        "Manga": main.get_source('toonily'),
-        "Top Anime": main.get_source('aniwatch'),
-        "Reddit Spacex": main.get_source('reddit_spacex'),
-        "Reddit News": main.get_source('reddit_news'),
+        "Bbc": get_source('bbc'),
+        "Manga": get_source('toonily'),
+        "Top Anime": get_source('aniwatch'),
+        "Reddit Spacex": get_source('reddit_spacex'),
+        "Reddit News": get_source('reddit_news'),
+        "Verge": get_source('verge'),
+        "TechCrunch": get_source('techcrunch'),
+        "apple_insider": get_source("apple_insider"),
+        "linux_today": get_source("linux_today"),
+        "game_informer": get_source("game_informer")
 
     }
 
