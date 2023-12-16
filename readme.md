@@ -1,36 +1,40 @@
 # Content Aggregrator
-This project, content aggregrator collects content form diffrenet sources and aggregrate it into a single location for easy access.
+
+## Things to be done
+------------------
+1. Scrape the websites - Four web scraped
+2. Configure database with postgresql, flask-sqlalchemy and alembic - configured with sqlite and flask-sqlachemy
+3. Create endpoints to view the content
+4. Use cron job, celery to schedule the scraping job 
+5. Design the frontend
+6. Learn and use docker in this project
+7. Create a make commands to easily configure the project
+8. Update the documentation (readme.md) 
+9. Deploy the project somewhere
+
+## Project Goals
+----------------
+This is built to learn about web scraping and flask.
+
+## Technology
+------------------
+* Python
+* Flask
+* PostgreSQL
+* Requests
+* BeautifulSoup4
+* Flask-SQLAlchemy
 
 
-## Run with Docker
-
-```
-docker-compose up
-```
-
-## Setup Project
----------------------
-Clone the project
-```
-git clone https://github.com/RitiKS-11/Content-Aggregator.git
-```
-
-Create virtual environment
-```
-python -m venv .venv
-```
-
-Activate virtual environment
-```
-source .venv/bin/activate
-```
-
-Install the dependencies
+## Configuration
+#### Install and run locally from a virtual environment
+---------------
+Install the required libraries
 ```
 pip install -r requirements.txt
 ```
 
-## Intialize and Migrate Database
+Migrate the database
 ```
 flask db init
 ```
@@ -46,14 +50,33 @@ flask db upgrade
 ## Run Background Task
 
 ```
-celery - A app.celery worker --loglevel=info
+python3 -m flask --app run.py run
 ```
 
+## Running Locally with Docker
+-------------------------
+Build the images
 ```
-celery -A app.celery beat --loglevel=info
-``` 
+docker-compose build
+```
 
-## Run the project
+Spin up the containers
 ```
-python -m flask --app run.py run
+docker-compose up
 ```
+
+
+## Website to Scrape
+-------------------
+
+* BBC -> Done
+* Reddit -> Done
+* Mangatop - Trending Today or ManagaPlus - Top Four Hottest - Done (only toonily) managplus needs javascript
+* AniWatch - Most Popular Anime Today -> Done 
+
+
+## Migrate Database
+
+* flask db init
+* flask db migrate
+* flask db upgrade
