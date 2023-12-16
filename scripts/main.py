@@ -39,10 +39,10 @@ def process_content(soup, element, class_name, base_url, source, limit=4):
         if element != 'a':
             content = content.find("a")
 
-        title = content['aira-label'] if source in use_aria_label else content.text.strip().replace("\n","")
+        title = content['aria-label'] if source in use_aria_label else content.text.strip().replace("\n","")
         url = base_url + content["href"] if source in needs_base_url else content["href"]
 
-        # insert_in_database(title=title, url=url, source=source)
+        insert_in_database(title=title, url=url, source=source)
         print(title, source, url)
         print('\n')
 

@@ -1,5 +1,5 @@
 # Content Aggregrator
-This project, content aggregrator collects content form diffrenet sources and puts in a single place.
+This project, content aggregrator collects content form diffrenet sources and aggregrate it into a single location for easy access.
 
 
 ## Run with Docker

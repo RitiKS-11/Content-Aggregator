@@ -95,12 +95,13 @@ def anime():
 
 def run_scripts():
     bbc_news()
-    # reddit_news()
+    reddit_news()
     reddit_spacex()
-    verge()
     techcrunch()
     game_informer()
     linux_today()
-    apple_insider()
+    # apple_insider()
     # manga()
     # anime()
+    verge()
+
