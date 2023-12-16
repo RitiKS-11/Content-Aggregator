@@ -95,7 +95,7 @@ def anime():
 
 def run_scripts():
     bbc_news()
-    reddit_news()
+    # reddit_news()
     reddit_spacex()
     techcrunch()
     game_informer()

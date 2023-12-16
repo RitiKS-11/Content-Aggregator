@@ -7,16 +7,16 @@ from app.util.main import get_source
 @app.route("/")
 def index():
     result = {
-        "BBC": get_source('bbc'),
-        "Manga": get_source('toonily'),
+        "BBC": get_source('BBC'),
+        # "Manga": get_source('toonily'),
         # "Top Anime": get_source('aniwatch'),
-        # "Reddit Spacex": get_source('reddit_spacex'),
-        "Reddit News": get_source('reddit_news'),
+        "Reddit Spacex": get_source('reddit spacex'),
+        # "Reddit News": get_source('reddit_news'),
         "Verge": get_source('verge'),
         "TechCrunch": get_source('techcrunch'),
-        "Apple Insider": get_source("apple_insider"),
+        # "Apple Insider": get_source("apple_insider"),
         "Linux Today": get_source("linux today"),
-        "Game Informer": get_source("game_informer")
+        "Game Informer": get_source("game informer")
 
     }
 
