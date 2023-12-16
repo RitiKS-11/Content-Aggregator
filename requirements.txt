@@ -15,6 +15,7 @@ flask-marshmallow==0.15.0
 Flask-Migrate==4.0.5
 Flask-SQLAlchemy==3.1.1
 greenlet==3.0.1
+gunicorn==21.2.0
 idna==3.6
 itsdangerous==2.1.2
 Jinja2==3.1.2
@@ -37,4 +38,3 @@ urllib3==2.1.0
 vine==5.1.0
 wcwidth==0.2.12
 Werkzeug==3.0.1
-Gunicorn

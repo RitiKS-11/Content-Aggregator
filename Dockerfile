@@ -10,8 +10,6 @@ COPY . .
 
 EXPOSE 5000
 
-RUN export FLASK_APP=run.py
-
 # RUN flask db init && flask db migrate && flask db upgrade
 
 # CMD ["flask", "--app", "run.py", "run", "-h", "0.0.0.0", "-p", "5000"]
